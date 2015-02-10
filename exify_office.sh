@@ -92,7 +92,7 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 			# Compress with EXI in compress mode
 			# ----------------------------------
 
-			${EXIFICIENT} -xml_in ${f} -exi_out ${f}.exi -compression -preserve_prefixes
+			${EXIFICIENT} -xml_in ${f} -exi_out ${f}.exi -compression -preserve_prefixes -preserve_comments -preserve_pi -preserve_dtd -preserve_lexicalValues
 			
 			# --------------------------
 			# Trash the uncompressed XML

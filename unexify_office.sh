@@ -78,7 +78,7 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 			# Decompress with EXI in compression mode
 			# ---------------------------------------
 
-			${EXIFICIENT} -exi_in ${f} -xml_out ${f_new} -compression -preserve_prefixes
+			${EXIFICIENT} -exi_in ${f} -xml_out ${f_new} -compression -preserve_prefixes -preserve_comments -preserve_pi -preserve_dtd -preserve_lexicalValues
 			
 			# -----------------------------
 			# Trash the compressed EXI file
@@ -91,7 +91,7 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 		# Rezip the file with original extension
 		# --------------------------------------
 
-		zip -r ../${path}.${ext} *
+		zip -r ../${path}_unexify.${ext} *
 		cd ..
 
 		# ---------------------
