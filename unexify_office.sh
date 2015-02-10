@@ -54,6 +54,7 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 		# --------------------------------------
 		# Unzip the file into a temporary folder
 		# --------------------------------------
+		
 		mkdir temp
 		cp ${target} temp
 		cd temp
@@ -79,7 +80,7 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 			# Decompress with EXI in compression mode
 			# ---------------------------------------
 
-			${EXIFICIENT} -exi_in ${f} -xml_out ${f_new} -compression -preserve_prefixes -preserve_comments -preserve_pi -preserve_dtd -preserve_lexicalValues
+			${EXIFICIENT} -exi_in ${f} -xml_out ${f_new} -compression -preserve_prefixes
 			
 			# -----------------------------
 			# Trash the compressed EXI file

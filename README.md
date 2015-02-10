@@ -19,10 +19,10 @@ $ cd exify-office
 
 Compress the included sample file:
 
-This will create a file called hello_world.doce ('e' for Efficient) in the same directory as the given docx file.
+This will create a file called schedule.xlse ('e' for Efficient) in the same directory as the given xls file.
 
 ```
-$ ./exify_office.sh samples/hello_world.docx
+$ ./exify_office.sh samples/schedule.xlsx
 ```
 
 Decompress
@@ -30,7 +30,7 @@ Decompress
 This creates a file called hello_unexify.docx, again in the samples directory.
 
 ```
-$ ./unexify_office.sh samples/hello_world.doce
+$ ./unexify_office.sh samples/schedule.xlse
 ```
 
 ## Notes
@@ -43,7 +43,7 @@ The scripts use the following conversions for filename extensions:
 | `.pptx`            | `.ppte`           |
 | `.xlsx`            | `.xlse`           |
 
-Even for the trivial Hello World .docx file, the roundtrip conversion may decrease the filesize. Generally, this is because when EXIficient writes EXI out to XML, it will condense empty elements to singleton notations. Office appears to use the expanded open-tag/close-tag notation in all cases.
+Even for the trivial `hello.docx` file, the roundtrip conversion may decrease the filesize. Generally, this is because when EXIficient writes EXI out to XML, it will condense empty elements to singleton notations. Office appears to use the expanded open-tag/close-tag notation in all cases.
 
 ```xml
 <!-- Original .docx format -->

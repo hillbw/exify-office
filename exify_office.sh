@@ -38,7 +38,6 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 		echo path:  ${path}
 		echo ext:   ${ext}
 
-
 		case ${ext} in
         	docx)
         	    ext='doce'
@@ -53,23 +52,6 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 	            echo "Converting pptx to ${ext}"
 	            ;;
 	    esac
-
-
-		
-
-		# ---------------------
-		# Split up the filepath
-		# ---------------------
-
-		# #path=${f%/*.*}/
-  #   	base=$(basename ${f})
-  #   	ext=.${base##*.}
-  #   	name=${base%.*}
-
-  #   	echo base:  ${base}
-  #   	echo ext:   ${ext}
-  #   	echo name:  ${name}
-
 
 		# --------------------------------------
 		# Unzip the file into a temporary folder
@@ -92,7 +74,7 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 			# Compress with EXI in compress mode
 			# ----------------------------------
 
-			${EXIFICIENT} -xml_in ${f} -exi_out ${f}.exi -compression -preserve_prefixes -preserve_comments -preserve_pi -preserve_dtd -preserve_lexicalValues
+			${EXIFICIENT} -xml_in ${f} -exi_out ${f}.exi -compression -preserve_prefixes
 			
 			# --------------------------
 			# Trash the uncompressed XML
