@@ -25,7 +25,7 @@ $ ./exify_office.sh samples/schedule.xlsx
 
 ### Decompress
 
-This creates a file called hello_unexify.docx, again in the samples directory.
+This creates a file called schedule_unexify.docx, again in the samples directory.
 
 ```
 $ ./unexify_office.sh samples/schedule.xlse
