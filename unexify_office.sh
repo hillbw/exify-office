@@ -2,8 +2,9 @@
 
 # -------------------------------------------------------------
 #  * Script to restore an exified Microsoft Office XML file
-#  * Accepts 1 argument: a path to an .ooexi file
-#  * Resulting decompressed version is placed in same directory
+#  * Accepts 1 argument: a path to an .doce, .ppte, or .xlse file
+#  * Resulting decompressed version is placed in same directory 
+#    with '_unexify' appended to the filename.
 # -------------------------------------------------------------
 
 
