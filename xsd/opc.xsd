@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Master schema for Open Office XML: Open Packacking Conventions -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:import schemaLocation="opc-contentTypes.xsd" 
+               namespace="http://schemas.openxmlformats.org/package/2006/content-types"/>
+    <xs:import schemaLocation="opc-coreProperties.xsd" 
+               namespace="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"/>
+    <xs:import schemaLocation="opc-digSig.xsd" 
+               namespace="http://schemas.openxmlformats.org/package/2006/digital-signature"/>
+    <xs:import schemaLocation="opc-relationships.xsd" 
+               namespace="http://schemas.openxmlformats.org/package/2006/relationships"/>
+</xs:schema>
