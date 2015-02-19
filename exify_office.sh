@@ -94,11 +94,21 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 		zip -r ../${path}.${ext} *
 		cd ..
 
+		# --------------------
+		# Dump a status report
+		# --------------------
+		echo "\nStatus Report"
+		echo "\n-------------\n"
+		ls -l ${path}.*
+		
+		
 		# ---------------------
 		# Trash the temp folder
 		# ---------------------
 
 		rm -r temp
+
+
 
 	fi
 fi
