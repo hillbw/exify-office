@@ -27,9 +27,9 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 		# -----------------------------------------------------
 		# Capture the file extension and convert for rezipping. 
 		# It is converted like so:
-		#   docx --> doce
-		#   xlsx --> xlse
-		#   pptx --> ppte
+		#   docx --> doce, using wml.xsd
+		#   xlsx --> xlse, using sml.xsd
+		#   pptx --> ppte, using pml.xsd
 		# -----------------------------------------------------
 		
 		path=${BASH_REMATCH[1]}
@@ -40,14 +40,17 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 
 		case ${ext} in
         	docx)
+							schema="${PWD}/xsd/ooxml-strict/wml.xsd"
         	    ext='doce'
         	    echo "Converting docx to ${ext}"
         	    ;;
 	        xlsx)
+							schema="${PWD}/xsd/ooxml-strict/sml.xsd"
 	            ext='xlse'
 	            echo "Converting xlsx to ${ext}"
 	            ;;
 	        pptx)
+							schema="${PWD}/xsd/ooxml-strict/pml.xsd"
 	            ext='ppte'
 	            echo "Converting pptx to ${ext}"
 	            ;;
@@ -74,7 +77,7 @@ if [[ ${target} =~ ${ext_regex} ]]; then
 			# Compress with EXI in compress mode
 			# ----------------------------------
 
-			${EXIFICIENT} -xml_in ${f} -exi_out ${f}.exi -compression -preserve_prefixes
+			${EXIFICIENT} -xml_in ${f} -exi_out ${f}.exi -compression -preserve_prefixes -schema ${schema}
 			
 			# --------------------------
 			# Trash the uncompressed XML
